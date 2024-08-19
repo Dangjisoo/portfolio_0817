@@ -1,0 +1,1043 @@
+@charset "utf-8";
+
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+KR:wght@200..900&display=swap");
+
+.fp-viewing-5 #fp-nav ul li a span {
+  background: #fff;
+}
+
+/* ALL */
+.wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+/* body */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: ripple-animation 1.8s ease;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(0, 0, 0, 0.1);
+  /* pointer-events: none; */
+}
+
+@keyframes ripple-animation {
+  from {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.fp-viewing-5 .ripple {
+  display: none !important;
+}
+
+/* sec01 */
+.sec01 {
+  position: relative;
+}
+
+.sec01 .sec01_img {
+  position: relative;
+  text-align: center;
+}
+.sec01 .sec01_img::before {
+  content: "Ji Soo Kang";
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  font-size: 80px;
+  bottom: 0;
+  animation: fadeDown 0.7s;
+}
+
+@keyframes fadeDown {
+  0% {
+    bottom: 20px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.sec01 .sec01_img::after {
+  content: "This is my planet";
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  position: absolute;
+  bottom: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  font-size: 50px;
+  animation: fadeDown2 1s;
+}
+
+@keyframes fadeDown2 {
+  0% {
+    bottom: -45px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -65px;
+    opacity: 1;
+  }
+}
+
+.sec01 .sec01_img img {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.sec01 .sec01_img img::after {
+  content: "";
+}
+.sec01 .sec01_contact {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  text-align: right;
+  color: #aaa;
+}
+.sec01 .sec01_contact p {
+}
+.sec01 .sec01_contact span {
+}
+
+/* sec02 */
+.sec02 {
+  /* background-color: #6d6d6d; */
+  padding-left: 60px;
+}
+.sec02 .sec02_title {
+  width: 100%;
+  height: 20%;
+  /* background-color: steelblue; */
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+.sec02 .sec02_title h1 {
+  font-family: "EB Garamond", serif;
+  font-size: 80px;
+  /* background-color: blueviolet; */
+}
+.sec02 .sec02_content {
+  height: 80%;
+  display: flex;
+}
+.sec02 .sec02_content .sec02_left {
+  width: 30%;
+  flex-wrap: wrap;
+}
+.sec02 .sec02_content .sec02_left .sec02_img {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blueviolet; */
+}
+.sec02 .sec02_content .sec02_left .sec02_img img {
+  width: 400px;
+  height: 400px;
+}
+
+.sec02 .sec02_content .sec02_left .sec02_profile {
+  width: 100%;
+  height: 40%;
+  padding-left: 130px;
+  /* background-color: teal; */
+}
+.sec02 .sec02_content .sec02_left .sec02_profile h2 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 45px;
+  margin-bottom: 30px;
+  /* background-color: yellow; */
+}
+.sec02 .sec02_content .sec02_left .sec02_profile p {
+  font-family: "EB Garamond", serif;
+  color: #6d6d6d;
+  font-size: 30px;
+  line-height: 30px;
+  /* background-color: yellowgreen; */
+}
+
+.sec02 .sec02_content .sec02_right {
+  width: 70%;
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateX(70px);
+  opacity: 0;
+  transition: all 1s;
+}
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-1 .sec02 .sec02_content .sec02_right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sec02 .sec02_content .sec02_experience {
+  width: 100%;
+  height: 50%;
+  padding-top: 60px;
+}
+
+.sec02 .sec02_content .sec02_experience h2 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 45px;
+  margin-bottom: 30px;
+  /* background-color: yellow; */
+}
+.sec02 .sec02_content .sec02_experience span {
+  font-family: "Noto Serif KR", serif;
+  color: #4d4d4d;
+  font-size: 30px;
+  /* background-color: violet; */
+}
+.sec02 .sec02_content .sec02_experience p {
+  /* background-color: slateblue; */
+  color: #777777;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.sec02 .sec02_content .sec02_others {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+
+.sec02 .sec02_content .sec02_others .ed {
+  width: 50%;
+  height: 100%;
+}
+
+.sec02 .sec02_content .sec02_others .ed h2 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 45px;
+  margin-bottom: 30px;
+  /* background-color: yellow; */
+}
+.sec02 .sec02_content .sec02_others .ed span {
+  /* background-color: violet; */
+  color: #4d4d4d;
+  font-size: 30px;
+  font-family: "Noto Serif KR", serif;
+}
+.sec02 .sec02_content .sec02_others .ed p {
+  /* background-color: slateblue; */
+  color: #777777;
+  padding-top: 20px;
+  font-size: 25px;
+}
+
+.sec02 .sec02_content .sec02_others .key {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  /* background-color: salmon; */
+}
+
+.sec02 .sec02_content .sec02_others .key h2 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 45px;
+  margin-bottom: 30px;
+  /* background-color: yellow; */
+}
+.sec02 .sec02_content .sec02_others .key p {
+  display: inline;
+  /* background-color: sienna; */
+  font-family: "Noto Serif KR", serif;
+  font-size: 30px;
+  color: #4d4d4d;
+}
+.sec02 .sec02_content .sec02_others .key .obser {
+  text-align: center;
+  padding-left: 30px;
+}
+.sec02 .sec02_content .sec02_others .key .analysis {
+  text-align: center;
+  padding-left: 40px;
+}
+.sec02 .sec02_content .sec02_others .key .realistic {
+  text-align: center;
+  padding-left: 45px;
+}
+.sec02 .sec02_content .sec02_others .key .meti {
+  position: absolute;
+  right: 515px;
+  bottom: 60%;
+}
+.sec02 .sec02_content .sec02_others .key .craft {
+  position: absolute;
+  right: 340px;
+  bottom: 60%;
+}
+
+/* sec03 */
+.sec03 {
+}
+.sec03 .inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.sec03 .inner .sec03_left {
+  width: 40%;
+  height: 100%;
+  /* background-color: bisque; */
+}
+.sec03 .inner .sec03_left .sec03_left_title {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: end;
+  justify-content: right;
+  /* background-color: skyblue; */
+}
+.sec03 .inner .sec03_left .sec03_left_title h1 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 200px;
+  padding-right: 45px;
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateY(-70px);
+  opacity: 0;
+  transition: all 1s;
+  /* background-color: bisque; */
+}
+
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-2 .sec03 .inner .sec03_left .sec03_left_title h1 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sec03 .inner .sec03_left .sec03_left_img {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  padding-top: 50px;
+  padding-right: 35px;
+  justify-content: flex-end;
+  /* background-color: peru; */
+}
+.sec03 .inner .sec03_left .sec03_left_img img {
+  position: absolute;
+  top: 7%;
+  left: 55%;
+  width: 300px;
+  height: 400px;
+  border-radius: 3%;
+}
+.sec03 .inner .sec03_right {
+  width: 60%;
+  height: 100%;
+  /* background-color: thistle; */
+}
+
+.sec03 .inner .sec03_right .sec03_right_img {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  /* background-color: springgreen; */
+}
+.sec03 .inner .sec03_right .sec03_right_img .meta {
+}
+.sec03 .inner .sec03_right .sec03_right_img .meta a {
+}
+.sec03 .inner .sec03_right .sec03_right_img .meta a img {
+  position: absolute;
+  /* top: 100px; */
+  left: 50px;
+  top: calc(100px + 80px); /* 기존 top 값에 50px 추가 */
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+.sec03 .inner .sec03_right .sec03_right_img .planet {
+}
+.sec03 .inner .sec03_right .sec03_right_img .planet img {
+  width: 120px;
+  height: 120px;
+  top: calc(160px + 95px); /* 기존 top 값에 50px 추가 */
+  position: absolute;
+  /* top: 179px; */
+  left: 510px;
+}
+
+.sec03 .inner .sec03_right .sec03_right_img .kakao {
+}
+.sec03 .inner .sec03_right .sec03_right_img .kakao a {
+}
+.sec03 .inner .sec03_right .sec03_right_img .kakao a img {
+  position: absolute;
+  border-radius: 3%;
+  top: 385px;
+  right: 400px;
+  transition: all 0.3s;
+}
+
+.sec03 .inner .sec03_right .sec03_right_title {
+  width: 100%;
+  height: 40%;
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateY(70px);
+  opacity: 0;
+  transition: all 1s;
+  /* background-color: pink; */
+}
+
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-2 .sec03 .inner .sec03_right .sec03_right_title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sec03 .inner .sec03_right .sec03_right_title h1 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 200px;
+  padding-left: 50px;
+  /* background-color: bisque; */
+}
+.sec03 .inner .sec03_right .sec03_right_title p {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 50px;
+  padding-left: 50px;
+}
+
+/* 마우스 올릴때 흑백에서 컬러로 */
+
+.sec03 .inner .sec03_left .sec03_left_img img:first-child {
+  opacity: 1;
+}
+.sec03 .inner .sec03_left .sec03_left_img img:last-child {
+  opacity: 0;
+}
+.sec03 .inner .sec03_left .sec03_left_img img:first-child:hover {
+  opacity: 0;
+}
+.sec03 .inner .sec03_left .sec03_left_img img:last-child:hover {
+  opacity: 1;
+}
+
+.sec03 .inner .sec03_right .sec03_right_img .meta a img:first-child {
+  opacity: 1;
+}
+.sec03 .inner .sec03_right .sec03_right_img .meta a img:last-child {
+  opacity: 0;
+}
+.sec03 .inner .sec03_right .sec03_right_img .meta a img:first-child:hover {
+  opacity: 0;
+}
+.sec03 .inner .sec03_right .sec03_right_img .meta a img:last-child:hover {
+  opacity: 1;
+}
+
+.sec03 .inner .sec03_right .sec03_right_img .kakao a img:first-child {
+  opacity: 1;
+}
+.sec03 .inner .sec03_right .sec03_right_img .kakao a img:last-child {
+  opacity: 0;
+}
+.sec03 .inner .sec03_right .sec03_right_img .kakao a img:first-child:hover {
+  opacity: 0;
+}
+.sec03 .inner .sec03_right .sec03_right_img .kakao a img:last-child:hover {
+  opacity: 1;
+}
+
+/* sec04 */
+.sec04 {
+}
+.sec04 .inner {
+  width: 100%;
+  height: 100%;
+}
+.sec04 .inner .sec04_title {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  padding-top: 200px;
+  padding-left: 300px;
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateX(-70px);
+  opacity: 0;
+  transition: all 1s;
+  /* background-color: antiquewhite; */
+}
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-3 .sec04 .inner .sec04_title {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sec04 .inner .sec04_title h2 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 100px;
+}
+.sec04 .inner .sec04_content {
+  width: 100%;
+  height: 60%;
+  padding-bottom: 170px;
+  display: flex;
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateX(70px);
+  opacity: 0;
+  transition: all 1s;
+  /* background-color: aqua; */
+}
+.fp-viewing-3 .sec04 .inner .sec04_content {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sec04 .inner .sec04_left {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* background-color: blue; */
+}
+.sec04 .inner .sec04_left .sec04_img1 {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+}
+.sec04 .inner .sec04_left .sec04_img1 img {
+  width: 200px;
+  height: 200px;
+}
+
+.sec04 .inner .sec04_right {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* background-color: violet; */
+}
+
+.sec04 .inner .sec04_right .sec04_right_img1 {
+  position: relative;
+}
+
+.sec04 .inner .sec04_right .sec04_right_img1 a {
+}
+
+.sec04 .inner .sec04_right .sec04_right_img1 a img {
+  position: absolute;
+  top: -350px;
+  left: 45px;
+  width: 300px;
+  height: 300px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+.sec04 .inner .sec04_right .sec04_right_img2 {
+  position: relative;
+}
+
+.sec04 .inner .sec04_right .sec04_right_img2 a {
+}
+
+.sec04 .inner .sec04_right .sec04_right_img2 a img {
+  position: absolute;
+  top: -350px;
+  right: 390px;
+  width: 400px;
+  height: 400px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+.sec04 .inner .sec04_right .sec04_right_txt {
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+.sec04 .inner .sec04_right .sec04_right_txt p {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 30px;
+}
+
+/* 마우스 올릴때 흑백에서 컬러로 */
+
+.sec04 .inner .sec04_right .sec04_right_img1 img:first-child {
+  opacity: 1;
+}
+.sec04 .inner .sec04_right .sec04_right_img1 img:last-child {
+  opacity: 0;
+}
+.sec04 .inner .sec04_right .sec04_right_img1 img:first-child:hover {
+  opacity: 0;
+}
+.sec04 .inner .sec04_right .sec04_right_img1 img:last-child:hover {
+  opacity: 1;
+}
+
+.sec04 .inner .sec04_right .sec04_right_img2 img:first-child {
+  opacity: 1;
+}
+.sec04 .inner .sec04_right .sec04_right_img2 img:last-child {
+  opacity: 0;
+}
+.sec04 .inner .sec04_right .sec04_right_img2 img:first-child:hover {
+  opacity: 0;
+}
+.sec04 .inner .sec04_right .sec04_right_img2 img:last-child:hover {
+  opacity: 1;
+}
+
+/* sec05 */
+.sec05 {
+  position: relative;
+}
+
+.sec05 .inner {
+  width: 100%;
+  height: 100%;
+}
+.sec05 .inner .sec05_top {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.sec05 .inner .sec05_top .sec05_top_right {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* padding-top: 90px; */
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateX(-70px);
+  opacity: 0;
+  transition: all 1s;
+  /* background-color: tomato; */
+}
+
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-4 .sec05 .inner .sec05_top .sec05_top_right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sec05 .inner .sec05_top .sec05_top_right .encar {
+  /* position: relative; */
+}
+.sec05 .inner .sec05_top .sec05_top_right .encar > a {
+  padding: 5px;
+}
+.sec05 .inner .sec05_top .sec05_top_right .encar img {
+  position: absolute;
+  transform: translate(-183%, -29.3%);
+  width: 270px;
+  height: 270px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+.sec05 .inner .sec05_top .sec05_top_right.vunque {
+  /* position: relative; */
+}
+.sec05 .inner .sec05_top .sec05_top_right.vunque a {
+}
+.sec05 .inner .sec05_top .sec05_top_right .vunque img {
+  position: absolute;
+  transform: translate(-82%, -32%);
+  width: 270px;
+  height: 270px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+/* 마우스 올릴때 흑백에서 컬러로 */
+
+/* 엔카 */
+.sec05 .inner .sec05_top .sec05_top_right .encar img:first-child {
+  opacity: 1;
+}
+.sec05 .inner .sec05_top .sec05_top_right .encar img:last-child {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_right .encar img:first-child:hover {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_right .encar img:last-child:hover {
+  opacity: 1;
+}
+
+/* 분크 */
+.sec05 .inner .sec05_top .sec05_top_right .vunque img:first-child {
+  opacity: 1;
+}
+.sec05 .inner .sec05_top .sec05_top_right .vunque img:last-child {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_right .vunque img:first-child:hover {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_right .vunque img:last-child:hover {
+  opacity: 1;
+}
+
+/* top right 끝 */
+
+.sec05 .inner .sec05_top .sec05_top_left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 43px;
+  /* background-color: cadetblue; */
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  opacity: 0;
+  transition: all 2s;
+}
+
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-4 .sec05 .inner .sec05_top .sec05_top_left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sec05 .inner .sec05_top .sec05_top_left .straw {
+  /* position: relative; */
+}
+.sec05 .inner .sec05_top .sec05_top_left .straw a {
+  padding: 5px;
+}
+.sec05 .inner .sec05_top .sec05_top_left .straw img {
+  position: absolute;
+  right: 40%;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+.sec05 .inner .sec05_top .sec05_top_left .aisarang {
+  position: relative;
+}
+.sec05 .inner .sec05_top .sec05_top_left .aisarang a {
+  padding: 5px;
+}
+.sec05 .inner .sec05_top .sec05_top_left .aisarang img {
+  position: absolute;
+  /* top: -20px; */
+  transform: translate(50%);
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+/* 마우스 올릴때 흑백에서 컬러로 */
+
+/* 딸기 */
+.sec05 .inner .sec05_top .sec05_top_left .straw img:first-child {
+  opacity: 1;
+}
+.sec05 .inner .sec05_top .sec05_top_left .straw img:last-child {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_left .straw img:first-child:hover {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_left .straw img:last-child:hover {
+  opacity: 1;
+}
+
+/* 아이사랑 */
+.sec05 .inner .sec05_top .sec05_top_left .aisarang img:first-child {
+  opacity: 1;
+}
+.sec05 .inner .sec05_top .sec05_top_left .aisarang img:last-child {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_left .aisarang img:first-child:hover {
+  opacity: 0;
+}
+.sec05 .inner .sec05_top .sec05_top_left .aisarang img:last-child:hover {
+  opacity: 1;
+}
+
+.sec05_top_right .sec05 .inner .sec05_bot {
+  display: flex;
+  align-items: center;
+  background-color: blueviolet;
+}
+.sec05 .inner .sec05_bot .sec05_bot_right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-right: 3%;
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  opacity: 0;
+  transition: all 2s;
+}
+
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-4 .sec05 .inner .sec05_bot .sec05_bot_right {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sec05 .inner .sec05_bot .sec05_bot_right .jellyfish {
+}
+.sec05 .inner .sec05_bot .sec05_bot_right .jellyfish a {
+}
+.sec05 .inner .sec05_bot .sec05_bot_right .jellyfish img {
+  width: 200px;
+  height: 200px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+.sec05 .inner .sec05_bot .sec05_bot_left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  position: relative; /* 요소의 위치를 상위 요소 기준으로 조정 */
+  top: -50px; /* 요소를 50px 위로 이동 */
+  right: 150px;
+  /* background-color: chartreuse; */
+  /* 내가 이 화면을 보기 전 글씨를 옮기고 투명하게 만들어둠 */
+  transform: translateX(70px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+/* 내가 해당 요소를 화면에 띄웠을 때 효과를 주면서 원래대로 보이게 함 */
+.fp-viewing-4 .sec05 .inner .sec05_bot .sec05_bot_left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop {
+  position: relative;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop a {
+  padding: 5px;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop img {
+  position: absolute;
+  transform: translate(230%, -42%);
+  width: 420px;
+  height: 280px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+/* 이솝 이미지 조정 */
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop img:first-child {
+  opacity: 1;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop img:last-child {
+  opacity: 0;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop img:first-child:hover {
+  opacity: 0;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .aesop img:last-child:hover {
+  opacity: 1;
+}
+
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju {
+  position: relative;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju a {
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju img {
+  position: absolute;
+  transform: translate(332%, -42%);
+  width: 420px;
+  height: 280px;
+  border-radius: 3%;
+  transition: all 0.3s;
+}
+
+/* 제주 */
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju img:first-child {
+  opacity: 1;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju img:last-child {
+  opacity: 0;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju img:first-child:hover {
+  opacity: 0;
+}
+.sec05 .inner .sec05_bot .sec05_bot_left .jeju img:last-child:hover {
+  opacity: 1;
+}
+
+.sec05 .inner .sec05_title {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 100px;
+  /* background-color: violet; */
+}
+
+.sec05 .inner .sec05_title h1 {
+  font-family: "EB Garamond", serif;
+  color: #4d4d4d;
+  font-size: 160px;
+}
+
+/* sec06 */
+.sec06 {
+  background-color: #aaa;
+}
+.sec06 .sec06_list {
+  width: 100%;
+  height: 100%;
+}
+.sec06 .sec06_list ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.sec06 .sec06_list ul li {
+  position: relative;
+  width: calc(100% / 3);
+  height: 100%;
+  transition: all 0.3s;
+}
+.sec06 .sec06_list ul li.on {
+  width: calc(100% / 3 + 200px);
+}
+.sec06 .sec06_list ul li.off {
+  width: calc(100% / 3 - 50px);
+}
+
+.sec06 .sec06_list ul li:nth-child(1) {
+  background: url("../img/sec06/sec06_1.png") no-repeat center;
+  background-size: cover;
+}
+.sec06 .sec06_list ul li:nth-child(2) {
+  background: url("../img/sec06/sec06_2.png") no-repeat center;
+  background-size: cover;
+}
+.sec06 .sec06_list ul li:nth-child(3) {
+  background: url("../img/sec06/sec06_3.png") no-repeat center;
+  background-size: cover;
+}
+
+.sec06 .sec06_list ul li .sec06_desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+}
+.sec06 .sec06_list ul li .sec06_desc {
+  opacity: 0;
+  padding-bottom: 10px;
+}
+
+.sec06 .sec06_list ul li.on .sec06_desc {
+  opacity: 1;
+}
+
+.sec06 .sec06_list ul li .sec06_desc a {
+  font-family: "Noto Serif KR", serif;
+  font-size: 20px;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 6px 20px;
+  border-radius: 30px;
+}
+
+.sec06 .sec06_list ul li .sec06_desc q {
+  display: inline-block;
+  padding-top: 23px;
+  font-family: "Noto Serif KR", serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+.sec06 .sec06_list ul li .sec06_desc p {
+  font-family: "EB Garamond", serif;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.sec06 .sec06_list ul li .sec06_desc span {
+  font-family: "Noto Serif KR", serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.sec07 {
+  position: relative;
+}
+.sec07 .sec07_img {
+}
+.sec07 .sec07_img img {
+}
+.sec07 .sec07_txt {
+}
+.sec07 .sec07_txt h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 70px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -50%);
+  width: 100%;
+}
+
+/* media Query */
+@media screen and (max-width: 1400px) {
+}
